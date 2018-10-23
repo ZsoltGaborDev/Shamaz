@@ -8,11 +8,18 @@
 
 import UIKit
 
+var playerCount = 0
+
 class ViewController: UIViewController {
 
     
     
     @IBOutlet weak var welcomeMessageLabel: UILabel!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        welcomeMessageLabel.text = "Tell Us Your Story Player \(Int.random(in: 1...10))"
+    }
        
 
     @IBAction func reflectOnThePastButton(_ sender: Any) {
@@ -40,7 +47,18 @@ class ViewController: UIViewController {
  
 }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "past" {
+            let viewController = segue.destination as! ViewControllersub
+            viewController.days = Int.random(in: 2...10)
+            viewController.isPast = true
+            
+        }else if segue.identifier == "future" {
+            let viewController = segue.destination as! ViewControllersub
+            viewController.days = Int.random(in: 2...10)
+            viewController.isPast = false
+        }
+    }
     
    
     

@@ -30,7 +30,7 @@
                                         </state>
                                         <connections>
                                             <action selector="reflectOnThePastButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o9N-QT-D06"/>
-                                            <segue destination="h65-WX-lsh" kind="show" id="t32-7r-6l2"/>
+                                            <segue destination="h65-WX-lsh" kind="show" identifier="past" id="t32-7r-6l2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lj5-z5-tIF">
@@ -42,7 +42,7 @@
                                         </state>
                                         <connections>
                                             <action selector="dreamOnTheFutureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7HN-ho-50H"/>
-                                            <segue destination="h65-WX-lsh" kind="show" id="ZB7-2n-A0H"/>
+                                            <segue destination="h65-WX-lsh" kind="show" identifier="future" id="ZB7-2n-A0H"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -111,6 +111,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="t32-7r-6l2"/>
+        <segue reference="ZB7-2n-A0H"/>
     </inferredMetricsTieBreakers>
 </document>

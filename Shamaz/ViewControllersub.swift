@@ -11,11 +11,12 @@ import UIKit
 class ViewControllersub: UIViewController {
 
     @IBOutlet weak var promtLabel: UILabel!
-    
+    var days: Int!
+    var isPast: Bool!
 
     @IBAction func whoIsNextButton(_ sender: Any) {
      
-     // welcomeMessageLabel = " The Next Is The Player Number \(randomNumberPlayer)"
+     //promtLabel.text = " The Next Is The Player Number \(randomNumberPlayer)"
     }
     
     var randomNumberPlayer = Int.random(in: 1...9)
@@ -25,7 +26,11 @@ class ViewControllersub: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        if isPast {
+            promtLabel.text = "Describe your day \(Int.random(in: 2...10) ) days ago"
+        } else {
+            promtLabel.text = "Describe your day in the next \(Int.random(in: 2...10) ) days"
+        }
         
     }
     
