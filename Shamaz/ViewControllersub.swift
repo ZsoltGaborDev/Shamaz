@@ -27,9 +27,9 @@ class ViewControllersub: UIViewController {
 
         // Do any additional setup after loading the view.
         if isPast {
-            promtLabel.text = "Describe your day \(Int.random(in: 2...10) ) days ago"
+            promtLabel.text = "Describe one funny moment from your last \(Int.random(in: 2...10) ) days"
         } else {
-            promtLabel.text = "Describe your day in the next \(Int.random(in: 2...10) ) days"
+            promtLabel.text = "What is your plan for the next \(Int.random(in: 2...10) ) days?"
         }
         
     }
