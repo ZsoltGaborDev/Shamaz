@@ -14,12 +14,12 @@ class ViewControllersub: UIViewController {
     var days: Int!
     var isPast: Bool!
 
-    @IBAction func whoIsNextButton(_ sender: Any) {
-     
-     //promtLabel.text = " The Next Is The Player Number \(randomNumberPlayer)"
+    
+    @IBAction func whoIsNextButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
-    var randomNumberPlayer = Int.random(in: 1...9)
+    var randomNumberPlayer = Int.random(in: 1...Int(totalPlayers))
  
     
     override func viewDidLoad() {
@@ -27,22 +27,11 @@ class ViewControllersub: UIViewController {
 
         // Do any additional setup after loading the view.
         if isPast {
-            promtLabel.text = "Describe one funny moment from your last \(Int.random(in: 2...10) ) days"
+            promtLabel.text = "Describe one funny moment from your last \(Int.random(in: 2...7) ) days"
         } else {
-            promtLabel.text = "What is your plan for the next \(Int.random(in: 2...10) ) days?"
+            promtLabel.text = "What is your plan for the next \(Int.random(in: 2...7) ) days?"
         }
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

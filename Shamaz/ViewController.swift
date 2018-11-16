@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        welcomeMessageLabel.text = "Tell Us Your Story Player \(Int.random(in: 1...10))"
+        welcomeMessageLabel.text = "Tell Us Your Story Player \(Int.random(in: 1...totalPlayers))"
     }
        
 
@@ -29,18 +29,6 @@ class ViewController: UIViewController {
     @IBAction func dreamOnTheFutureButton(_ sender: Any) {
     }
     
-    
-    
-    //var numberOfDays = Int.random(in: 2...10)
-    
-    //var promptLabelMessage1 = "Describe your day \(numberOfDays) days ago"
-    
-    
-    
-   
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         welcomeMessageLabel.text = "Tell Us Your Story!"
@@ -50,17 +38,26 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "past" {
             let viewController = segue.destination as! ViewControllersub
-            viewController.days = Int.random(in: 2...10)
+            viewController.days = Int.random(in: 2...7)
             viewController.isPast = true
             
         }else if segue.identifier == "future" {
             let viewController = segue.destination as! ViewControllersub
-            viewController.days = Int.random(in: 2...10)
+            viewController.days = Int.random(in: 2...7)
             viewController.isPast = false
         }
     }
     
-   
+    @IBAction func quit() {
+        let alert = UIAlertController(title: "Quit?", message: "Are you sure you want to quit?", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "Yes", style: .destructive) { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        let no = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        alert.addAction(yes)
+        alert.addAction(no)
+        present(alert, animated: true, completion: nil)
+    }
     
     
 }
