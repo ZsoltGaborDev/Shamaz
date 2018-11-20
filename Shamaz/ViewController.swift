@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             viewController.days = Int.random(in: 2...7)
             viewController.isPast = true
             
-        }else if segue.identifier == "future" {
+        } else if segue.identifier == "future" {
             let viewController = segue.destination as! ViewControllersub
             viewController.days = Int.random(in: 2...7)
             viewController.isPast = false
