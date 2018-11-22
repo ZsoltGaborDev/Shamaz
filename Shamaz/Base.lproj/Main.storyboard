@@ -164,6 +164,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="startButton:" destination="kSQ-Hv-4ij" eventType="touchUpInside" id="byX-RU-pVg"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="gmj-eV-dfh"/>
                                 </connections>
                             </button>

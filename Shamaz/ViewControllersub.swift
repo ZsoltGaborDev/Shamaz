@@ -11,21 +11,18 @@ import UIKit
 class ViewControllersub: UIViewController {
 
     @IBOutlet weak var promtLabel: UILabel!
-    var days: Int!
+    
     var isPast: Bool!
 
-    
+// dismiss this view (ViewControllersub)
     @IBAction func whoIsNextButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
-    var randomNumberPlayer = Int.random(in: 1...Int(totalPlayers))
- 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+// load the chosen description
         if isPast {
             promtLabel.text = "Describe one funny moment from your last \(Int.random(in: 2...7) ) days"
         } else {

@@ -8,15 +8,20 @@
 
 import UIKit
 
+// set default value for total players
 var totalPlayers: Int = 2
 
 class StarterViewController: UIViewController, UITextFieldDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
- 
+    
+    @IBAction func startButton(_ sender: UIButton) {
+    }
+
+// ensure that number of players has to be a number between 2 and 12
+
     func textFieldDidEndEditing(_ textField: UITextField){
         if Int(textField.text ?? "") == nil {
             textField.text = "2"
@@ -32,7 +37,8 @@ class StarterViewController: UIViewController, UITextFieldDelegate{
         
        }
     }
-    
+
+// dismiss the keyboard when the user taps the return button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
