@@ -15,6 +15,7 @@ class StarterViewController: UIViewController, UITextFieldDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundImage")!)
     }
     
     @IBAction func startButton(_ sender: UIButton) {
